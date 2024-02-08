@@ -1,14 +1,14 @@
+import { ComponentPortal, DomPortalOutlet } from '@angular/cdk/portal';
 import {
   ApplicationRef,
   ComponentFactoryResolver,
   ComponentRef,
+  EmbeddedViewRef,
   Injectable,
   Injector,
-  ViewContainerRef,
-  EmbeddedViewRef,
-  Type
+  Type,
+  ViewContainerRef
 } from '@angular/core';
-import { DomPortalOutlet, ComponentPortal } from '@angular/cdk/portal';
 
 function isViewContainerRef(x: any): x is ViewContainerRef {
   return x.element;
@@ -21,7 +21,7 @@ function isViewContainerRef(x: any): x is ViewContainerRef {
  *
  * @export
  */
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class InjectionService {
   static globalRootViewContainer: ViewContainerRef = null;
 

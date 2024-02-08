@@ -1,18 +1,16 @@
 import {
+  ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
   OnChanges,
-  ChangeDetectionStrategy,
-  EventEmitter,
   Output,
   SimpleChanges
 } from '@angular/core';
-import { TooltipService } from '../tooltip/tooltip.service';
-import { LegendOptions, LegendType, LegendPosition } from '../types/legend.model';
+import { LegendOptions, LegendPosition, LegendType } from '../types/legend.model';
 import { ScaleType } from '../types/scale-type.enum';
 
 @Component({
-  providers: [TooltipService],
   selector: 'ngx-charts-chart',
   template: `
     <div class="ngx-charts-outer" [style.width.px]="view[0]" [style.height.px]="view[1]">
